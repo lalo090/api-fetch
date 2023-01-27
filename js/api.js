@@ -2,7 +2,7 @@ let container = document.querySelector(".tbody-content");
 
 const getUsers = (url = "https://reqres.in/api/users?delay=3") => {
     let fechaCaducidad = localStorage.getItem("fechaCaducidad");
-    bordeSpiner(); //Spinner
+    bordeSpiner(); /* Spinner */
     if (Object.is(null, fechaCaducidad) || new Date().getTime() > fechaCaducidad) {
         console.log("Fetch");  
         fetch(url)
@@ -21,7 +21,7 @@ const getUsers = (url = "https://reqres.in/api/users?delay=3") => {
     }
 };
 
-//Impresión de "Datos Usuarios"
+/* Impresión de "Datos Usuarios" */
 function insertUsers(users) {      
     container.innerHTML = "";
     localStorage.setItem("users", JSON.stringify(users));
